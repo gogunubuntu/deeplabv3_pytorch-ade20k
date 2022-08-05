@@ -146,7 +146,7 @@ class ADE20KSegmentation(data.Dataset):
 
         #print(num_mask)
 
-        target = Image.fromarray(num_mask)
+        # target = Image.fromarray(num_mask)
         
         if self.transform is not None:
             img, target = self.transform(img, target)
