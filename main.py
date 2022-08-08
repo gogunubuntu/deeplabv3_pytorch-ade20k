@@ -1,3 +1,4 @@
+from doctest import UnexpectedException
 from tqdm import tqdm
 import network
 import utils
@@ -19,7 +20,10 @@ from utils.visualizer import Visualizer
 from PIL import Image
 import matplotlib
 import matplotlib.pyplot as plt
-
+def str2bool(x:str) -> bool:
+    if x.lower() == "true" : return True
+    elif x.lower() == "false" : return False
+    else: raise UnexpectedException
 
 def get_argparser():
     parser = argparse.ArgumentParser()
@@ -42,7 +46,7 @@ def get_argparser():
     parser.add_argument("--separable_conv", action='store_true', default=False,
                         help="apply separable conv to decoder and aspp")
 
-    parser.add_argument("--dram_class", type=bool, default=False,
+    parser.add_argument("--dram_class", type=str2bool, default=False,
                         help="ade20k class num 150 -> 7")
     parser.add_argument("--output_stride", type=int, default=16, choices=[8, 16])
 
