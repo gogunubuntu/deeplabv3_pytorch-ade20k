@@ -2,3 +2,6 @@ data/*
 datasets/*
 checkpoints/*
 *.pyc
+*.mp4
+*.mov
+*.avi
